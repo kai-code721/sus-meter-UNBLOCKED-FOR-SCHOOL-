@@ -40,6 +40,13 @@
         radial-gradient(70% 70% at 84% 86%, rgba(112, 72, 34, 0.55) 0%, rgba(112, 72, 34, 0) 62%),
         linear-gradient(160deg, #2f7a2c 0%, #5e3a1f 100%);
     }
+    body.delanie-mode{
+      animation: delanie-flash 0.16s steps(1, end) infinite;
+    }
+    @keyframes delanie-flash{
+      0%, 49%{ background:#000; color:#fff; }
+      50%, 100%{ background:#fff; color:#000; }
+    }
     body.light-mode{
       --bg: #eef2ff;
       --card: #ffffff;
@@ -606,6 +613,7 @@ ring.classList.remove('monkey');
 againBtn.classList.remove('corner-run');
       body.classList.remove('sunny-mode');
       body.classList.remove('cody-mode');
+      body.classList.remove('delanie-mode');
       body.classList.remove('secret-mode');
       secretPage.setAttribute('aria-hidden', 'true');
       card.classList.remove('fly-away');
@@ -726,6 +734,17 @@ if (normalized === secretCode) {
         meterPercent = 100;
         title = 'so remember when you thought i kept saying ribbit, i was saying ribbit, it was rage bait';
         desc = 'so remember when you thought i kept saying ribbit, i was saying ribbit, it was rage bait';
+      } else if (normalized === 'maverick') {
+        displayPercent = 100000000;
+        meterPercent = 100;
+        title = "absolute chicken muncher, can't stop eating all that watermelon";
+        desc = "absolute chicken muncher, can't stop eating all that watermelon";
+      } else if (normalized === 'delanie') {
+        displayPercent = 100;
+        meterPercent = 100;
+        title = 'BLACK BLACK BLACK BLACK!!!!';
+        desc = 'BLACK BLACK BLACK BLACK!!!!';
+        body.classList.add('delanie-mode');
       } else if (normalized === 'cody') {
         displayPercent = 100;
         meterPercent = 100;
